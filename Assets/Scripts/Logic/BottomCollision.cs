@@ -1,4 +1,5 @@
-﻿using Scripts.Core;
+﻿using DG.Tweening;
+using Scripts.Core;
 using UnityEngine;
 
 namespace Scripts.Logic
@@ -17,11 +18,12 @@ namespace Scripts.Logic
             LevelController level = LevelController.Instance;
             UIController ui = UIController.Instance;
             
+            Destroy(other.gameObject);
+            
             if (tag.Equals(_objectTag))
             {
                 level.ObjectsInScene--;
                 ui.UpdateLevelProgress();
-                Destroy(other.gameObject);
 
                 if (level.ObjectsInScene == 0)
                 {
@@ -33,7 +35,12 @@ namespace Scripts.Logic
             if (tag.Equals(_obstacleTag))
             {
                 GameStates.isGameOver = true;
-                level.RestartLevel();
+                Camera.main.transform
+                    .DOShakePosition(1f, 0.1f, 20, 90f)
+                    .OnComplete(() =>
+                    {
+                        level.RestartLevel();
+                    });
             }
         }
 

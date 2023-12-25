@@ -1,4 +1,5 @@
-﻿using Scripts.Logic;
+﻿using DG.Tweening;
+using Scripts.Logic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,7 +18,9 @@ namespace Scripts.Core
         [SerializeField] private Image _fillProgress;
         
         [Space]
-        [SerializeField] private GameObject _levelCompletedText;
+        [SerializeField] private TMP_Text _levelCompletedText;
+        
+        private float _durationShowText = 0.4f; 
         
         private void Awake()
         {
@@ -28,7 +31,6 @@ namespace Scripts.Core
         private void Start()
         {
             _fillProgress.fillAmount = 0f;
-            _levelCompletedText.SetActive(false);
             SetLevelProgressText();
         }
 
@@ -43,12 +45,12 @@ namespace Scripts.Core
         {
             LevelController level = LevelController.Instance;
             float value = 1f - ((float)level.ObjectsInScene / level.TotalObjects);
-            _fillProgress.fillAmount = value;
+            _fillProgress.DOFillAmount(value, _durationShowText);
         }
 
         public void ShowLevelCompletedText()
         {
-            _levelCompletedText.SetActive(true);
+            _levelCompletedText.DOFade(1f, 0.8f).From(0);
         }
     }
 }
