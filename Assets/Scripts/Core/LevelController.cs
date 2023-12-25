@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Scripts.Logic
+namespace Scripts.Core
 {
     public class LevelController : MonoBehaviour
     {

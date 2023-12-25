@@ -17,14 +17,16 @@ namespace Scripts.Logic
             string tag = other.tag;
             LevelController level = LevelController.Instance;
             UIController ui = UIController.Instance;
-            
+            Magnet magnet = Magnet.Instance;
+                
             Destroy(other.gameObject);
             
             if (tag.Equals(_objectTag))
             {
                 level.ObjectsInScene--;
                 ui.UpdateLevelProgress();
-
+                magnet.RemoveFromMagnetField(other.attachedRigidbody);
+                
                 if (level.ObjectsInScene == 0)
                 {
                     ui.ShowLevelCompletedText();

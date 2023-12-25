@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Scripts.Core;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace Scripts.Logic
         [SerializeField] private Vector2 _moveLimits;
         [SerializeField] private float _holeRadius;
         [SerializeField] private Transform _holeCenter;
+        [SerializeField] private Transform _rotatingCircle;
         
         [Space]
         [SerializeField] private float _moveSpeed;
@@ -34,13 +36,33 @@ namespace Scripts.Logic
             GameStates.isMoving = false;
             
             _mesh = _holeMeshFilter.mesh;
-            
+
+            RotateCircle();
             FindHoleVertices();
         }
 
         private void Update()
         {
+            if (Application.isEditor)
+                MouseMove();
+            else
+                MobileTouchMove();
+        }
+
+        private void MouseMove()
+        {
             GameStates.isMoving = Input.GetMouseButton(0);
+
+            if (!GameStates.isGameOver && GameStates.isMoving)
+            {
+                Move();
+                UpdateHoleVertices();
+            }
+        }
+
+        private void MobileTouchMove()
+        {
+            GameStates.isMoving = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved;
 
             if (!GameStates.isGameOver && GameStates.isMoving)
             {
@@ -72,9 +94,7 @@ namespace Scripts.Logic
             Vector3[] vertices = _mesh.vertices;
             
             for (int i = 0; i < _holeVerticesCount; i++)
-            {
                 vertices[_holeVertices[i]] = _holeCenter.position + _offsets[i];
-            }
 
             _mesh.vertices = vertices;
             _holeMeshFilter.mesh = _mesh;
@@ -97,6 +117,15 @@ namespace Scripts.Logic
             _holeVerticesCount = _holeVertices.Count;
         }
 
+        private void RotateCircle()
+        {
+            _rotatingCircle
+                .DORotate(new Vector3(90f, 0, -90f), 0.2f)
+                .SetEase(Ease.Linear)
+                .From(new Vector3(90f, 0, 0f))
+                .SetLoops(-1, LoopType.Incremental);
+        }
+        
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
