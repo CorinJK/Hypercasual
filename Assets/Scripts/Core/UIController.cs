@@ -19,6 +19,9 @@ namespace Scripts.Core
         
         [Space]
         [SerializeField] private TMP_Text _levelCompletedText;
+
+        [Space] 
+        [SerializeField] private Image _fadePanel;
         
         private float _durationShowText = 0.4f; 
         
@@ -30,6 +33,7 @@ namespace Scripts.Core
 
         private void Start()
         {
+            StartFade();
             _fillProgress.fillAmount = 0f;
             SetLevelProgressText();
         }
@@ -51,6 +55,11 @@ namespace Scripts.Core
         public void ShowLevelCompletedText()
         {
             _levelCompletedText.DOFade(1f, 0.8f).From(0);
+        }
+
+        private void StartFade()
+        {
+            _fadePanel.DOFade(0, 1.3f).From(1f);
         }
     }
 }

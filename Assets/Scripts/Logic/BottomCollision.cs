@@ -28,6 +28,7 @@ namespace Scripts.Logic
                 if (level.ObjectsInScene == 0)
                 {
                     ui.ShowLevelCompletedText();
+                    level.PlayWinParticle();
                     Invoke("NextLevel", 2f);
                 }
             }
