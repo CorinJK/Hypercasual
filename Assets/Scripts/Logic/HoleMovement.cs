@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Scripts.Core;
 using UnityEngine;
 
-namespace Scripts.Hole
+namespace Scripts.Logic
 {
     public class HoleMovement : MonoBehaviour
     {
