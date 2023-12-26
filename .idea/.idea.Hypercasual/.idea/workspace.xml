@@ -10,6 +10,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Dragon Platformer/Assets/Scripts/UI/MainMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Dragon Platformer/Assets/Scripts/UI/UIController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Rogue Knight/Assets/CodeBase/Editor/Tools.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Rogue Knight/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Rogue Knight/Assets/CodeBase/Infrastructure/GameRunner.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -82,6 +90,7 @@
       <workItem from="1703254502516" duration="5242000" />
       <workItem from="1703437073684" duration="4840000" />
       <workItem from="1703524296050" duration="8763000" />
+      <workItem from="1703602289917" duration="10971000" />
     </task>
     <servers />
   </component>

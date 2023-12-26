@@ -34,6 +34,7 @@ namespace Scripts.Logic
         {
             GameStates.isGameOver = false;
             GameStates.isMoving = false;
+            GameStates.isStop = false;
             
             _mesh = _holeMeshFilter.mesh;
 
@@ -43,6 +44,9 @@ namespace Scripts.Logic
 
         private void Update()
         {
+            if (GameStates.isStop)
+                return;
+            
             if (Application.isEditor)
                 MouseMove();
             else

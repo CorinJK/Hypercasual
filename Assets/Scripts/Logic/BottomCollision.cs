@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using Scripts.Core;
+using Scripts.UI;
 using UnityEngine;
 
 namespace Scripts.Logic
@@ -16,7 +17,7 @@ namespace Scripts.Logic
             
             string tag = other.tag;
             LevelController level = LevelController.Instance;
-            UIController ui = UIController.Instance;
+            HUDController hud = HUDController.Instance;
             Magnet magnet = Magnet.Instance;
                 
             Destroy(other.gameObject);
@@ -24,13 +25,14 @@ namespace Scripts.Logic
             if (tag.Equals(_objectTag))
             {
                 level.ObjectsInScene--;
-                ui.UpdateLevelProgress();
+                hud.UpdateLevelProgress();
                 magnet.RemoveFromMagnetField(other.attachedRigidbody);
                 
                 if (level.ObjectsInScene == 0)
                 {
-                    ui.ShowLevelCompletedText();
+                    hud.ShowLevelCompletedText();
                     level.PlayWinParticle();
+                    GameStates.isStop = true;
                     Invoke("NextLevel", 2f);
                 }
             }
@@ -38,12 +40,10 @@ namespace Scripts.Logic
             if (tag.Equals(_obstacleTag))
             {
                 GameStates.isGameOver = true;
-                Camera.main.transform
-                    .DOShakePosition(1f, 0.1f, 20, 90f)
-                    .OnComplete(() =>
-                    {
-                        level.RestartLevel();
-                    });
+                if (Camera.main != null)
+                    Camera.main.transform
+                        .DOShakePosition(1f, 0.1f, 20, 90f)
+                        .OnComplete(() => { level.RestartLevel(); });
             }
         }
 

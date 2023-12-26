@@ -65,7 +65,9 @@ namespace Scripts.Core
         
         public void LoadNextLevel()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            PlayerPrefs.SetInt("CurrentLevel", nextSceneIndex);
+            SceneManager.LoadScene(nextSceneIndex);
         }
         
         public void RestartLevel()

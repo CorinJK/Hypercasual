@@ -790,7 +790,7 @@ MonoBehaviour:
   _holeRadius: 0.25
   _holeCenter: {fileID: 9209191237293992697}
   _rotatingCircle: {fileID: 4468795428609096583}
-  _moveSpeed: 8
+  _moveSpeed: 12
 --- !u!114 &296037596521022744
 MonoBehaviour:
   m_ObjectHideFlags: 0
