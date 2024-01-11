@@ -9,6 +9,10 @@ namespace Scripts.Logic
     {
         private readonly string _objectTag = "Object";
         private readonly string _obstacleTag = "Obstacle";
+
+        [SerializeField] private AudioClip _catchAudio;
+        [SerializeField] private AudioClip _victoryAudio;
+        [SerializeField] private AudioClip _lossAudio;
         
         private void OnTriggerEnter(Collider other)
         {
@@ -17,9 +21,10 @@ namespace Scripts.Logic
             
             string tag = other.tag;
             LevelController level = LevelController.Instance;
+            AudioController audio = AudioController.Instance;
             HUDController hud = HUDController.Instance;
             Magnet magnet = Magnet.Instance;
-                
+
             Destroy(other.gameObject);
             
             if (tag.Equals(_objectTag))
@@ -27,11 +32,14 @@ namespace Scripts.Logic
                 level.ObjectsInScene--;
                 hud.UpdateLevelProgress();
                 magnet.RemoveFromMagnetField(other.attachedRigidbody);
+                audio.PlaySound(_catchAudio);
                 
                 if (level.ObjectsInScene == 0)
                 {
                     hud.ShowLevelCompletedText();
                     level.PlayWinParticle();
+                    audio.PlaySound(_victoryAudio);
+                    
                     GameStates.isStop = true;
                     Invoke("NextLevel", 2f);
                 }
@@ -40,6 +48,8 @@ namespace Scripts.Logic
             if (tag.Equals(_obstacleTag))
             {
                 GameStates.isGameOver = true;
+                audio.PlaySound(_lossAudio);
+                
                 if (Camera.main != null)
                     Camera.main.transform
                         .DOShakePosition(1f, 0.1f, 20, 90f)

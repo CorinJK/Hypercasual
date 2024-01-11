@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 1153492156354892619}
   - component: {fileID: 440652321248548839}
   - component: {fileID: 7966769622608421151}
+  - component: {fileID: 4072186543249497641}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -152,6 +153,7 @@ RectTransform:
   - {fileID: 4839434437609765571}
   - {fileID: 563592478392839139}
   - {fileID: 6652710289003690105}
+  - {fileID: 2426214123939746596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -239,8 +241,21 @@ MonoBehaviour:
   _currentLevelText: {fileID: 1998786747041955738}
   _fillProgress: {fileID: 2374443919105220657}
   _levelCompletedText: {fileID: 7146574998870489245}
-  _fadePanel: {fileID: 7545124877859833710}
+--- !u!114 &4072186543249497641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935399361025404404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedc67ce167e4700bda81d98c4552c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _pauseScreen: {fileID: 2126031665575235217}
+  _fadePanel: {fileID: 7545124877859833710}
+  _clickAudio: {fileID: 8300000, guid: c804204826bac4648a09b0078381f896, type: 3}
 --- !u!1 &1531980640093292654
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,8 +445,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7966769622608421151}
-        m_TargetAssemblyTypeName: Scripts.UI.HUDController, Assembly-CSharp
+      - m_Target: {fileID: 4072186543249497641}
+        m_TargetAssemblyTypeName: Scripts.UI.PauseScreen, Assembly-CSharp
         m_MethodName: ShowPauseScreen
         m_Mode: 1
         m_Arguments:
@@ -739,8 +754,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7966769622608421151}
-        m_TargetAssemblyTypeName: Scripts.UI.HUDController, Assembly-CSharp
+      - m_Target: {fileID: 4072186543249497641}
+        m_TargetAssemblyTypeName: Scripts.UI.PauseScreen, Assembly-CSharp
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -1516,8 +1531,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7966769622608421151}
-        m_TargetAssemblyTypeName: Scripts.UI.HUDController, Assembly-CSharp
+      - m_Target: {fileID: 4072186543249497641}
+        m_TargetAssemblyTypeName: Scripts.UI.PauseScreen, Assembly-CSharp
         m_MethodName: OnReset
         m_Mode: 1
         m_Arguments:
@@ -1649,8 +1664,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7966769622608421151}
-        m_TargetAssemblyTypeName: Scripts.UI.HUDController, Assembly-CSharp
+      - m_Target: {fileID: 4072186543249497641}
+        m_TargetAssemblyTypeName: Scripts.UI.PauseScreen, Assembly-CSharp
         m_MethodName: HidePauseScreen
         m_Mode: 1
         m_Arguments:
@@ -1782,8 +1797,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7966769622608421151}
-        m_TargetAssemblyTypeName: Scripts.UI.HUDController, Assembly-CSharp
+      - m_Target: {fileID: 4072186543249497641}
+        m_TargetAssemblyTypeName: Scripts.UI.PauseScreen, Assembly-CSharp
         m_MethodName: OnExit
         m_Mode: 1
         m_Arguments:
@@ -1927,7 +1942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15005498, g: 0.1432894, b: 0.18867922, a: 0.65882355}
+  m_Color: {r: 0.15005498, g: 0.1432894, b: 0.18867922, a: 0.7176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2094,3 +2109,65 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &7343292327603105983
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 259877774701171011}
+    m_Modifications:
+    - target: {fileID: 4478332001077470359, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_Name
+      value: Win_Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -960
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -539.978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+--- !u!4 &2426214123939746596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4918838522394485659, guid: 79ee5daebcdf2fa46853278151e31be9, type: 3}
+  m_PrefabInstance: {fileID: 7343292327603105983}
+  m_PrefabAsset: {fileID: 0}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scripts.Logic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Scripts.UI
@@ -8,34 +9,31 @@ namespace Scripts.UI
         [SerializeField] private GameObject _mainMenuScreen;
         [SerializeField] private GameObject _settingsMenuScreen;
         
+        [SerializeField] private AudioClip _clickAudio;
+        
         public void StartGame()
         {
             int level = PlayerPrefs.GetInt("CurrentLevel");
+            PlaySoundClick();
             
             if (level == 0) 
                 SceneManager.LoadScene(1);
             else 
                 SceneManager.LoadScene(level);
         }
-        
-        public void OnShowSettings()
-        {
-            _mainMenuScreen.SetActive(false);
-            _settingsMenuScreen.SetActive(true);
-        }
 
-        public void BackToMenu()
+        public void PlaySoundClick()
         {
-            _settingsMenuScreen.SetActive(false);
-            _mainMenuScreen.SetActive(true);
+            AudioController.Instance.PlaySound(_clickAudio);
         }
         
         public void OnExit()
         {
-                Application.Quit();
+            PlaySoundClick();
+            Application.Quit();
 
 #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #endif
         }
     }

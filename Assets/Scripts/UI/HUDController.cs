@@ -1,5 +1,5 @@
 ﻿using DG.Tweening;
-using Scripts.Core;
+using Scripts.Logic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,25 +20,16 @@ namespace Scripts.UI
         [Space]
         [SerializeField] private TMP_Text _levelCompletedText;
 
-        [Space] 
-        [SerializeField] private Image _fadePanel;
-        
-        private float _durationShowText = 0.4f; 
-        
-        [Header("PauseScreen")]
-        [SerializeField] private GameObject _pauseScreen;
-        
+        private float _durationShowText = 0.4f;
+
         private void Awake()
         {
             if (Instance == null) 
                 Instance = this;
-            
-            _pauseScreen.SetActive(false);
         }
 
         private void Start()
         {
-            StartFade();
             _fillProgress.fillAmount = 0f;
             SetLevelProgressText();
         }
@@ -60,44 +51,6 @@ namespace Scripts.UI
         public void ShowLevelCompletedText()
         {
             _levelCompletedText.DOFade(1f, 0.8f).From(0);
-        }
-
-        public void ShowPauseScreen()
-        {
-            Time.timeScale = 0;
-            _pauseScreen.SetActive(true);
-        }
-        
-        public void HidePauseScreen()
-        {
-            Time.timeScale = 1;
-            _pauseScreen.SetActive(false);
-        }
-
-        public void BackToMenu()
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(0);
-        }
-        
-        public void OnReset()
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }     
-        
-        public void OnExit()
-        {
-            Application.Quit();
-
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#endif
-        }
-        
-        private void StartFade()
-        {
-            _fadePanel.DOFade(0, 1.3f).From(1f);
         }
     }
 }

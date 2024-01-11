@@ -631,6 +631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8cb7c049fb4826bf6cbbcfce2c7420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _catchAudio: {fileID: 8300000, guid: ff8e9966c8680524081a514bbe25fe55, type: 3}
+  _victoryAudio: {fileID: 8300000, guid: 0503cc5178c6af048b07b5f8b7c4cc66, type: 3}
+  _lossAudio: {fileID: 8300000, guid: 817898a49c3a87e46869033326751b53, type: 3}
 --- !u!1 &5778636323005934782
 GameObject:
   m_ObjectHideFlags: 0
