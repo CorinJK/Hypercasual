@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Scripts.Core;
 using Scripts.Logic;
 using TMPro;
 using UnityEngine;
@@ -18,8 +19,14 @@ namespace Scripts.UI
         [SerializeField] private Image _fillProgress;
         
         [Space]
-        [SerializeField] private TMP_Text _levelCompletedText;
-
+        [SerializeField] private TMP_Text _levelCompletedText; 
+        
+        [Space]
+        [SerializeField] private GameObject _restartScreen;
+        
+        [Space] 
+        [SerializeField] private AudioClip _clickAudio;
+        
         private float _durationShowText = 0.4f;
 
         private void Awake()
@@ -31,6 +38,7 @@ namespace Scripts.UI
         private void Start()
         {
             _fillProgress.fillAmount = 0f;
+            _restartScreen.SetActive(false);
             SetLevelProgressText();
         }
 
@@ -51,6 +59,20 @@ namespace Scripts.UI
         public void ShowLevelCompletedText()
         {
             _levelCompletedText.DOFade(1f, 0.8f).From(0);
+        }
+
+        public void ShowRestartMenu()
+        {
+            Time.timeScale = 0;
+            _restartScreen.SetActive(true);
+        }
+        
+        public void HideRestartScreen()
+        {
+            Time.timeScale = 1;
+            GameStates.isStop = false;
+            AudioController.Instance.PlaySound(_clickAudio);
+            _restartScreen.SetActive(false);
         }
     }
 }

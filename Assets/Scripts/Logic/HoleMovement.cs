@@ -32,7 +32,7 @@ namespace Scripts.Logic
         
         private void Start()
         {
-            GameStates.isGameOver = false;
+            GameStates.isStop = false;
             GameStates.isMoving = false;
             GameStates.isStop = false;
             
@@ -57,7 +57,7 @@ namespace Scripts.Logic
         {
             GameStates.isMoving = Input.GetMouseButton(0);
 
-            if (!GameStates.isGameOver && GameStates.isMoving)
+            if (!GameStates.isStop && GameStates.isMoving)
             {
                 Move();
                 UpdateHoleVertices();
@@ -68,7 +68,7 @@ namespace Scripts.Logic
         {
             GameStates.isMoving = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved;
 
-            if (!GameStates.isGameOver && GameStates.isMoving)
+            if (!GameStates.isStop && GameStates.isMoving)
             {
                 Move();
                 UpdateHoleVertices();

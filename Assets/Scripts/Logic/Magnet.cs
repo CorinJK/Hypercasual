@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Scripts.Core;
 using UnityEngine;
 
@@ -31,7 +30,7 @@ namespace Scripts.Logic
 
         private void FixedUpdate()
         {
-            if (!GameStates.isGameOver && GameStates.isMoving)
+            if (!GameStates.isStop && GameStates.isMoving)
             {
                 foreach (Rigidbody rb in _affectedRigidbodies)
                 {
@@ -44,7 +43,7 @@ namespace Scripts.Logic
         {
             string tag = other.tag;
             
-            if (!GameStates.isGameOver && (tag.Equals(_obstacleTag) || tag.Equals(_objectTag)))
+            if (!GameStates.isStop && (tag.Equals(_obstacleTag) || tag.Equals(_objectTag)))
             {
                 AddToMagnetField (other.attachedRigidbody);
             }
@@ -54,7 +53,7 @@ namespace Scripts.Logic
         {
             string tag = other.tag;
             
-            if (!GameStates.isGameOver && (tag.Equals(_obstacleTag) || tag.Equals(_objectTag)))
+            if (!GameStates.isStop && (tag.Equals(_obstacleTag) || tag.Equals(_objectTag)))
             {
                 RemoveFromMagnetField (other.attachedRigidbody);
             }

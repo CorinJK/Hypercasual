@@ -16,22 +16,21 @@ namespace Scripts.Logic
         
         private void OnTriggerEnter(Collider other)
         {
-            if (GameStates.isGameOver)
+            if (GameStates.isStop)
                 return;
             
             string tag = other.tag;
             LevelController level = LevelController.Instance;
             AudioController audio = AudioController.Instance;
             HUDController hud = HUDController.Instance;
-            Magnet magnet = Magnet.Instance;
 
             Destroy(other.gameObject);
+            Magnet.Instance.RemoveFromMagnetField(other.attachedRigidbody);
             
             if (tag.Equals(_objectTag))
             {
                 level.ObjectsInScene--;
                 hud.UpdateLevelProgress();
-                magnet.RemoveFromMagnetField(other.attachedRigidbody);
                 audio.PlaySound(_catchAudio);
                 
                 if (level.ObjectsInScene == 0)
@@ -47,13 +46,13 @@ namespace Scripts.Logic
             
             if (tag.Equals(_obstacleTag))
             {
-                GameStates.isGameOver = true;
+                GameStates.isStop = true;
                 audio.PlaySound(_lossAudio);
                 
                 if (Camera.main != null)
                     Camera.main.transform
                         .DOShakePosition(1f, 0.1f, 20, 90f)
-                        .OnComplete(() => { level.RestartLevel(); });
+                        .OnComplete(() => { hud.ShowRestartMenu(); });
             }
         }
 

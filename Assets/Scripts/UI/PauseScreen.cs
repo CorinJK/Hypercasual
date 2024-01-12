@@ -27,28 +27,28 @@ namespace Scripts.UI
         public void ShowPauseScreen()
         {
             Time.timeScale = 0;
-            AudioController.Instance.PlaySound(_clickAudio);
+            PlayClickAudio();
             _pauseScreen.SetActive(true);
         }
         
         public void HidePauseScreen()
         {
             Time.timeScale = 1;
-            AudioController.Instance.PlaySound(_clickAudio);
+            PlayClickAudio();
             _pauseScreen.SetActive(false);
         }
 
         public void BackToMenu()
         {
             Time.timeScale = 1;
-            AudioController.Instance.PlaySound(_clickAudio);
+            PlayClickAudio();
             SceneManager.LoadScene(0);
         }
         
         public void OnReset()
         {
             Time.timeScale = 1;
-            AudioController.Instance.PlaySound(_clickAudio);
+            PlayClickAudio();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }     
         
@@ -65,6 +65,11 @@ namespace Scripts.UI
         private void StartFade()
         {
             _fadePanel.DOFade(0, 1.3f).From(1f);
+        }
+
+        private void PlayClickAudio()
+        {
+            AudioController.Instance.PlaySound(_clickAudio);
         }
     }
 }
