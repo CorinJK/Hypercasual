@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 
 namespace Scripts.Logic
 {
@@ -68,6 +69,8 @@ namespace Scripts.Logic
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             PlayerPrefs.SetInt("CurrentLevel", nextSceneIndex);
             SceneManager.LoadScene(nextSceneIndex);
+            
+            YandexGame.NewLeaderboardScores("LeaderboardLevel", nextSceneIndex);
         }
         
         public void RestartLevel()

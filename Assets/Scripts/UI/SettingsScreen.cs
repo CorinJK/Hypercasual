@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using YG;
 
 namespace Scripts.UI
 {
@@ -33,6 +34,21 @@ namespace Scripts.UI
             _mixer.audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
             
             PlayerPrefs.SetFloat("MasterVolume", volume);
+        }
+
+        public void SetLanguageRu()
+        {
+            YandexGame.SwitchLanguage("ru");
+        }
+        
+        public void SetLanguageEn()
+        {
+            YandexGame.SwitchLanguage("en");
+        }
+        
+        public void SetLanguageTr()
+        {
+            YandexGame.SwitchLanguage("tr");
         }
     }
 }

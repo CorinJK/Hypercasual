@@ -47,10 +47,10 @@ namespace Scripts.Logic
             if (GameStates.isStop)
                 return;
             
-            if (Application.isEditor)
-                MouseMove();
-            else
+            if (Application.isMobilePlatform)
                 MobileTouchMove();
+            else
+                MouseMove();
         }
 
         private void MouseMove()
