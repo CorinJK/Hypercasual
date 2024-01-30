@@ -64,7 +64,7 @@ namespace Scripts.UI
         
         private void StartFade()
         {
-            _fadePanel.DOFade(0, 1.3f).From(1f);
+            _fadePanel.DOFade(0, 1f).From(1f);
         }
 
         private void PlayClickAudio()
