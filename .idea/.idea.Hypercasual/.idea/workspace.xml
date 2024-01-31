@@ -59,6 +59,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_4.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PauseScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/1639667869_216-catherineasquithgallery-com-p-fon-rozovo-fioletovii-301.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/1639667869_216-catherineasquithgallery-com-p-fon-rozovo-fioletovii-301.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/3fab1087926dc7581f940e5d1ddbd973.png" beforeDir="false" />
@@ -208,7 +209,7 @@
       <workItem from="1705422095688" duration="5041000" />
       <workItem from="1705594514411" duration="627000" />
       <workItem from="1706621267684" duration="1380000" />
-      <workItem from="1706643740965" duration="754000" />
+      <workItem from="1706643740965" duration="966000" />
     </task>
     <servers />
   </component>
