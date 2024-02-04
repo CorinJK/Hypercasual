@@ -14,11 +14,16 @@ namespace Scripts.Logic
         [SerializeField] private AudioClip _victoryAudio;
         [SerializeField] private AudioClip _lossAudio;
         
+        private float gameOverCooldown = 1f;
+        private float cooldownTimer = Mathf.Infinity;
+
+        private void Update()
+        {
+            cooldownTimer += Time.deltaTime;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (GameStates.isStop)
-                return;
-            
             string tag = other.tag;
             LevelController level = LevelController.Instance;
             AudioController audio = AudioController.Instance;
@@ -44,10 +49,11 @@ namespace Scripts.Logic
                 }
             }
             
-            if (tag.Equals(_obstacleTag))
+            if (tag.Equals(_obstacleTag) && cooldownTimer > gameOverCooldown)
             {
                 GameStates.isStop = true;
                 audio.PlaySound(_lossAudio);
+                cooldownTimer = 0;
                 
                 if (Camera.main != null)
                     Camera.main.transform

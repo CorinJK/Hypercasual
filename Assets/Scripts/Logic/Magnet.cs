@@ -67,6 +67,11 @@ namespace Scripts.Logic
         public void RemoveFromMagnetField(Rigidbody rb)
         {
             _affectedRigidbodies.Remove(rb);
+        }      
+        
+        public void ClearFromMagnetField(Rigidbody rb)
+        {
+            _affectedRigidbodies.Clear();
         }
     }
 }
