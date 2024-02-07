@@ -23,6 +23,7 @@ namespace Scripts.UI
         
         [Space]
         [SerializeField] private GameObject _restartScreen;
+        [SerializeField] private GameObject _pauseButton;
         
         [Space] 
         [SerializeField] private AudioClip _clickAudio;
@@ -65,6 +66,7 @@ namespace Scripts.UI
         {
             Time.timeScale = 0;
             _restartScreen.SetActive(true);
+            _pauseButton.SetActive(false);
         }
         
         public void HideRestartScreen()
@@ -73,6 +75,7 @@ namespace Scripts.UI
             GameStates.isStop = false;
             AudioController.Instance.PlaySound(_clickAudio);
             _restartScreen.SetActive(false);
+            _pauseButton.SetActive(true);
         }
     }
 }
