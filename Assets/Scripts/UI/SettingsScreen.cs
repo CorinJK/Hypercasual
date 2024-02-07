@@ -22,7 +22,7 @@ namespace Scripts.UI
         public void ToggleMusic(bool enabled)
         {
             if (enabled) 
-                _mixer.audioMixer.SetFloat("MusicVolume", -10);
+                _mixer.audioMixer.SetFloat("MusicVolume", 0);
             else 
                 _mixer.audioMixer.SetFloat("MusicVolume", -80);
             

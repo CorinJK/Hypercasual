@@ -14,16 +14,21 @@ namespace Scripts.Logic
         [SerializeField] private AudioClip _victoryAudio;
         [SerializeField] private AudioClip _lossAudio;
         
-        private float gameOverCooldown = 1f;
-        private float cooldownTimer = Mathf.Infinity;
+        private float _gameOverCooldown = 1f;
+        private float _cooldownTimer = Mathf.Infinity;
+
+        private bool _isComplete = false;
 
         private void Update()
         {
-            cooldownTimer += Time.deltaTime;
+            _cooldownTimer += Time.deltaTime;
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            if (_isComplete)
+                return;
+            
             string tag = other.tag;
             LevelController level = LevelController.Instance;
             AudioController audio = AudioController.Instance;
@@ -44,16 +49,17 @@ namespace Scripts.Logic
                     level.PlayWinParticle();
                     audio.PlaySound(_victoryAudio);
                     
+                    _isComplete = true;
                     GameStates.isStop = true;
                     Invoke("NextLevel", 2f);
                 }
             }
             
-            if (tag.Equals(_obstacleTag) && cooldownTimer > gameOverCooldown)
+            if (tag.Equals(_obstacleTag) && _cooldownTimer > _gameOverCooldown)
             {
                 GameStates.isStop = true;
                 audio.PlaySound(_lossAudio);
-                cooldownTimer = 0;
+                _cooldownTimer = 0;
                 
                 if (Camera.main != null)
                     Camera.main.transform

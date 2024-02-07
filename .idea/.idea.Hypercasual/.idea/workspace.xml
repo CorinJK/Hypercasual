@@ -6,19 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c593aacf-ebe9-49cd-b995-7d1b64932aaa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hypercasual/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hypercasual/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Area/Area.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Area/Area.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/11.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/11.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/12.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/12.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/13.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/13.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/14.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/14.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/16.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/16.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/17.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/17.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/7.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Mixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Mixer.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AudioController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AudioController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EndScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EndScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/BottomCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/BottomCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Magnet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Magnet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +129,9 @@
       <workItem from="1705594514411" duration="627000" />
       <workItem from="1706621267684" duration="1380000" />
       <workItem from="1706643740965" duration="966000" />
-      <workItem from="1707081703348" duration="2728000" />
+      <workItem from="1707081703348" duration="3569000" />
+      <workItem from="1707154833942" duration="468000" />
+      <workItem from="1707161233668" duration="1648000" />
     </task>
     <servers />
   </component>
